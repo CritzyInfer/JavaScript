@@ -45,9 +45,9 @@ function pesquisaSatisfacao() {
 
 }
 
-function exer03() {
+function exer02() {
     let a, b, c, d, aux
-    let contas = 0
+    let conta = 0
 
     while (grupo < 5) {
         let conta = 1
@@ -75,7 +75,7 @@ function exer03() {
     }
 }
 
-function exer04() {
+function exer03() {
     let conta = 1
     let idade = 0
     let FaixaEta1 = 0
@@ -117,7 +117,7 @@ function exer04() {
     alert
 }
 
-function exer05() {
+function exer04() {
     let conta = 0;
     let NumeroDigit = Number(prompt(`Informe o número desejado:`));
     let Mult = `Tabuada do ${NumeroDigit}:\n`;
@@ -130,7 +130,7 @@ function exer05() {
     alert(Mult);
 }
 
-function exer06() {
+function exer05() {
     for (let i = 1; i <= 10; i++) {
         let resultado = `Tabuada do ${i}:\n`;
         for (let j = 1; j <= 10; j++) {
@@ -140,8 +140,7 @@ function exer06() {
     }
 }
 
-
-function exer08() {
+function exer07() {
     let altura, peso, idade, qtdeIdade50 = 0, qtdeIdade10e20 = 0, qtdePeso40Kg = 0, somaAltura = 0
     for (let conta = 1; conta <= 5; conta++) {
         do {
@@ -184,7 +183,7 @@ function exer08() {
     alert(`item 3 ${(qtdePeso40Kg / 5) * 100}\n`)
 }
 
-function exer09() {
+function exer08() {
     let Altura, olhos, cabelo, Peso, Idade;
     let olhosazuis = 0;
     let qtdeIdSup50Inf60kg = 0;
@@ -252,4 +251,82 @@ function exer09() {
         `3Item-${porcentBeyes} \n` +
         `4Item-${qtderuivosSemBeyes}`)
 
+}
+
+function exer09() {
+    let idade = 0, peso = 0, altura = 0;
+let somaIdades = 0;
+let qtde90kg150alt = 0;
+let altura190 = 0;
+let idade10a30_com190alt = 0;
+
+for (let conta = 1; conta <= 10; conta++) {
+    do {
+        idade = Number(prompt(`${conta} - Informe a idade:`));
+    } while (idade < 0);
+
+    somaIdades += idade;
+
+    do {
+        peso = Number(prompt(`${conta} - Informe o peso:`));
+    } while (peso < 0);
+
+    do {
+        altura = Number(prompt(`${conta} - Informe a altura (em cm):`));
+    } while (altura < 0);
+
+    // Peso > 90kg E altura < 150cm
+    if (peso > 90 && altura < 150) {
+        qtde90kg150alt++;
+    }
+
+    // Pessoas com altura > 190cm
+    if (altura > 190) {
+        altura190++;
+        // E idade entre 10 e 30 (inclusive)
+        if (idade >= 10 && idade <= 30) {
+            idade10a30_com190alt++;
+        }
+    }
+}
+
+let mediaIdade = somaIdades / 4;
+let porcentagem = 0;
+
+if (altura190 > 0) {
+    porcentagem = (idade10a30_com190alt / altura190) * 100;
+}
+
+alert(`A média das idades é: ${mediaIdade.toFixed(2)}`);
+alert(`Quantidade de pessoas com mais de 90kg e menos de 150cm: ${qtde90kg150alt}`);
+alert(`Porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas com mais de 190cm: ${porcentagem}`);
+
+}
+
+function exer10() {
+    let Numeros,pares = 0, Primos = 0, conta = 0, contas = 0
+
+    for(conta = 0; conta <= 10;conta++){
+
+        do{
+            Numeros = Number(prompt(`${conta}Digite um numero`))
+        }
+        while(Numeros === 0)
+
+            if(Numeros % 2 === 0){
+                pares += Numeros
+            }
+        let primoV = true
+        for(contas = 2; contas < Numeros; contas++){
+            if (Numeros % contas === 0){
+                primoV = false
+                break
+            }
+        }
+        if(primoV){
+            Primos += Numeros
+        }
+    }
+    alert(`Soma dos numeros pares: ${pares}`)
+    alert(`Soma dos numeros primos: ${Primos}`)
 }
