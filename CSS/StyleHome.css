@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(78, 78, 78);
+    align-content: center;
+}
+.TabelaExer{
+    justify-self: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(231, 31, 31, 0.425);
+    display: flexbox;
+}
+button{
+    margin: 5px;
+}
